@@ -39,58 +39,20 @@ body {
 .link-card {
     text-decoration: none;
     display: block;
-    height: 100%;
+    /* height: 100%; */
 }
 
-/* .navbar {
-    display: flex;
-    background-color: var(--color-primario);
-    font-size: 1.3rem;
-    font-weight: 500;
+.p {
+    font-size: 1rem;
 }
-
-.navbar-caption {
-    width: 15%;
-    color: var(--color-blanco);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.navbar-menu {
-    width: 85%;
-}
-
-.navbar-menu ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    justify-content: flex-end;
-}
-
-.navbar-menu a {
-    color: var(--color-blanco);text-decoration: none;
-    padding: 15px 20px;
-    display: block;
-    transition: color 0.2s ease;
-}
-
-.navbar-menu a:hover {
-    background-color: var(--color-secundario);
-    color: var(--color-terciario);
-} */
 
 section.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background-color: var(--color-primario);
     color: var(--color-blanco);
-    /* margin: 0;
-    padding: 0; */
 }
 
 section.navbar div.navbar-logo {
@@ -100,7 +62,7 @@ section.navbar div.navbar-logo {
 section.navbar > nav > ul {
     display: flex;
     list-style: none;
-    gap: 10px;
+    gap: 6px;
     margin: 0;
     padding: 0;
 }
@@ -108,7 +70,7 @@ section.navbar > nav > ul {
 section.navbar > nav > ul > li a {
     display: block;
     text-decoration: none;
-    padding: 15px;
+    padding: 10px;
     color: var(--color-blanco);
 }
 
@@ -143,6 +105,40 @@ section.navbar .bars {
     margin: 15px;
 }
 
+@media(min-width: 600px) {
+    .p {
+        font-size: 1.2rem;
+    }
+    section.navbar {
+        font-size: 1.2rem;        
+    }
+
+    section.navbar > nav > ul {        
+        gap: 8px;
+    }
+
+    section.navbar > nav > ul > li a {
+        padding: 12px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .p {
+        font-size: 1.4rem;
+    }
+    section.navbar {
+        font-size: 1.5rem;        
+    }
+
+    section.navbar > nav > ul {
+        gap: 10px;
+    }
+
+    section.navbar > nav > ul > li a {
+        padding: 15px;
+    }
+}
+
 @media (max-width: 576px) {
     section.navbar nav {
         display: none;
@@ -155,15 +151,21 @@ section.navbar .bars {
 .footer {
     background-color: var(--color-primario);
     color: var(--color-blanco);
-    padding: 40px 20px 20px;
+    padding: 20px;
 }
 
 .footer-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
+    display: flex;
+    gap: 20px;
+    max-width: 1024px;
     margin: 0 auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.footer-section {
+    width: 220px;
 }
 
 .footer-section h3,
@@ -242,6 +244,7 @@ section.navbar .bars {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 0 15px;
 }
 
 .container-row-end {
@@ -249,6 +252,7 @@ section.navbar .bars {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    padding: 0 15px;
 }
 
 .container-cell-50 {
@@ -272,8 +276,10 @@ section.navbar .bars {
 
 .container-logos {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
 }
 
 .title-h1 {
@@ -284,19 +290,8 @@ section.navbar .bars {
 
 .caption-h2 {
     font-family: "GeneralSans-Medium";
-    font-size: 1.4rem;
+    font-size: 1rem;
     padding: 0 1rem;
-}
-
-.caption-h3 {
-    font-family: "GeneralSans-Medium";
-    font-size: 1.2rem;
-    padding: 0 1rem;
-    font-weight: 100;
-}
-
-.p {
-    font-size: 1.4rem;
 }
 
 /* página inicio */
@@ -323,23 +318,30 @@ section.navbar .bars {
     width: 100%;
     background: var(--color-negro-semistransparente);
     color: var(--color-blanco);
-    padding: 15px 20px;
-    font-size: 1.2rem;
+    padding: 9px 14px;
 }
 
 .banner-caption-h1 {
     font-family: "GeneralSans-Regular";
-    font-size: 3rem;
-    padding: 0 1rem;
+    font-size: 1.8rem;
     margin: 1rem 0 0 0;
 }
 
 .banner-caption-h2 {
     font-family: "GeneralSans-Regular";
-    font-size: 1.4rem;
-    padding: 0 1rem;
-    margin: 0;
+    font-size: 0.9rem;    
     margin: 0 0 1rem 0;
+}
+
+.container-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .container-cards-5 {
@@ -360,6 +362,16 @@ section.navbar .bars {
     padding: 0 20px;
 }
 
+/* .card {
+    background-color: var(--color-primario-semitransparente);
+    color: var(--color-blanco);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px var(--color-negro-semistransparente-suave);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    height: 100%;
+} */
+
 .card {
     background-color: var(--color-primario-semitransparente);
     color: var(--color-blanco);
@@ -368,6 +380,7 @@ section.navbar .bars {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
     height: 100%;
+    /* width: 180px; */
 }
 
 .card:hover {
@@ -389,7 +402,7 @@ section.navbar .bars {
 }
 
 .card p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.4;
     padding: 0 20px;
 }
@@ -400,6 +413,7 @@ section.navbar .bars {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 2px 6px var(--color-negro-semistransparente-suave);
+    /* width: 231px; */
 }
 
 .card-banner:hover {
@@ -432,6 +446,76 @@ section.navbar .bars {
 .card-banner-caption-subtitle {
     font-size: 1rem;
     font-family: "GeneralSans-Medium";
+}
+
+@media(min-width: 600px) {
+    .caption-h2 {
+        font-size: 1.2rem;
+    }
+
+    .banner-caption {
+        padding: 12px 17px;
+    }
+
+    .banner-caption-h1 {
+        font-size: 2rem;
+    }
+
+    .banner-caption-h2 {
+        font-size: 1rem;
+    }
+
+    .container-cards {        
+        flex-direction: row;
+    }
+
+    .card {        
+        height: 100%;
+        width: 180px;
+    }
+
+    .card-banner {
+        width: 231px;
+    }
+
+    .footer-container {
+        flex-direction: row;
+    }
+}
+
+@media(min-width: 1024px) {
+    .caption-h2 {
+        font-size: 1.4rem;
+    }
+
+    .banner-caption {
+        padding: 15px 20px;
+    }
+
+    .banner-caption-h1 {
+        font-size: 3rem;
+    }
+
+    .banner-caption-h2 {
+        font-size: 1.4rem;
+    }
+
+    .container-cards {        
+        flex-direction: row;
+    }
+
+    .card {        
+        height: 100%;
+        width: 180px;
+    }
+
+    .card-banner {
+        width: 231px;
+    }
+
+    .footer-container {
+        flex-direction: row;
+    }
 }
 
 /* página contacto */
